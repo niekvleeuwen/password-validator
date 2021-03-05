@@ -15,8 +15,8 @@ use App\Http\Controllers\PasswordController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('validate', [PasswordController::class, 'validatePassword']);
+Route::middleware('auth:sanctum')->post('validate', [PasswordController::class, 'validatePassword']);

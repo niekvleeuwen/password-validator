@@ -1,10 +1,9 @@
-@extends('layouts.app')
-
-@section('content')
-<main class="container">
-    <div class="starter-template text-center py-5 px-3">
-      <h1>Password Validator</h1>
-      <p class="lead">Validate passwords in a breeze</p>
+<x-guest-layout>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <x-jet-welcome />
+            </div>
+        </div>
     </div>
-</main>
-@endsection
+</x-guest-layout>

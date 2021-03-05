@@ -1,26 +1,32 @@
-# Password Validator
-Validate passwords in a breeze
+<p align="center"><a href="https://passwordvalidator.niekvanleeuwen.nl" target="_blank"><img src="https://raw.githubusercontent.com/niekvleeuwen/password-validator/master/public/img/logo.svg" width="300"></a></p>
 
-## How to use
+## About Password validator
 
-Send a POST request to `/api/validate/` with the following body
+Password validator is a web application capable of validating passwords using Password validator is able to validate passwords against different sources. Several techniques are also used to determine the strength of the password. Some of the functionalities offered are:
+
+- Check if the password has been exposed in data breaches. 
+- Calculate the time it takes to brute-force the password.
+- 
+
+## Getting started
+
+Create a API token here [here](https://passwordvalidator.niekvanleeuwen.nl). This API token is used to authenticate the request and must be send along with the request as a Bearer token. Now send a POST request to `/api/validate/` with the following body
 
 ```json
 {
-	"password": "password"
+	"password": "password1"
 }
 ```
 
-The response should look like this for `password`.
+The response should look like this for `password1`.
 
 ```json
 {
   "result": false,
   "errors": [
-    "Password must include at least one number",
-    "Password must include at least one uppercase",
-    "Password must include at least one symbol",
-    "Password found in 3861493 breach(es)."
+    "Password found in 2427158 breach(es).",
+    "Estimated brute force time is 17.41 minutes"
   ]
 }
 ```
+
